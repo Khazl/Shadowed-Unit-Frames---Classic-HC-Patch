@@ -29,7 +29,7 @@ Original author attribution and bundled library notices are retained. This repos
 
 ## Publishing a release for CurseForge
 
-1. On GitHub, create a release with a new tag targeting the latest commit on `codex/classic-reborn`, including the packaging workflow. Use a filename-safe tag such as `v4.3.9-reborn.1`.
+1. On GitHub, create a release with a new tag targeting the latest commit on `main`, including the packaging workflow. Use a filename-safe tag such as `v4.3.9-reborn.1`.
 2. Click **Publish release**. The **Package addon** workflow builds and checks the ZIP, then attaches it to that release. Wait for the workflow to finish.
 3. Under release Assets, download `ShadowedUnitFrames-Classic-Reborn-<tag>.zip`. Do not upload GitHub's automatic **Source code (zip)** archive to CurseForge.
 4. Upload that named ZIP to your own CurseForge project and select the appropriate supported Classic game versions. No automatic CurseForge upload or API key is configured.
