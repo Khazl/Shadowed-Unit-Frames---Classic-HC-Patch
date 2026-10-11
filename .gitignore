@@ -1,0 +1,10 @@
+# Local backups and editor files
+*.bak
+*.bak.*
+*.orig
+*.rej
+*~
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
