@@ -33,7 +33,7 @@ def build(version):
         data = (ROOT / name).read_bytes()
         if dest in {f"{MAIN}/{MAIN}.toc", f"{OPTIONS}/{OPTIONS}.toc"}:
             text = data.decode("utf-8-sig")
-            text = re.sub(r"^## X-(?:Curse-Project-ID|WoWI-ID):.*\n?", "", text, flags=re.M)
+            text = re.sub(r"^## X-WoWI-ID:.*\n?", "", text, flags=re.M)
             text = re.sub(r"^## Version:.*$", f"## Version: {version}", text, flags=re.M)
             if not re.search(r"^## Version:", text, re.M):
                 text = f"## Version: {version}\n" + text

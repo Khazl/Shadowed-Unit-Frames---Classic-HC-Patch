@@ -34,6 +34,6 @@ Original author attribution and bundled library notices are retained. This repos
 3. Under release Assets, download `ShadowedUnitFrames-Classic-Reborn-<tag>.zip`. Do not upload GitHub's automatic **Source code (zip)** archive to CurseForge.
 4. Upload that named ZIP to your own CurseForge project and select the appropriate supported Classic game versions. No automatic CurseForge upload or API key is configured.
 
-The archive has exactly two top-level folders: `ShadowedUnitFrames/` and `ShadowedUF_Options/`. Both TOCs receive the release tag as their version. Bundled libraries are included; Git files, workflows, build scripts, backups, and build output are excluded. Original project IDs have been removed; add your own CurseForge project ID once assigned.
+The archive has exactly two top-level folders: `ShadowedUnitFrames/` and `ShadowedUF_Options/`. Both TOCs receive the release tag as their version. Bundled libraries are included; Git files, workflows, build scripts, backups, and build output are excluded. The main addon identifies CurseForge project **1739222**; the release packager preserves this ID. The original WoWInterface project ID remains excluded.
 
 Publishing a release from an older commit without the workflow will not package it. Merely saving a draft does not trigger packaging. Pushes and manual Actions runs also build a preview ZIP without publishing a release. For local packaging, run `python scripts/package.py --version v4.3.9-reborn.1`; the ZIP is written to `dist/`.
