@@ -1,0 +1,8 @@
+## Interface: 11508
+## Title: SUF Classic Compatibility
+## Notes: Restores legacy aura colors required by Shadowed Unit Frames on Classic Era and Hardcore.
+## Author: Khazl
+## Version: 1.0.0
+## Dependencies: ShadowedUnitFrames
+
+Compatibility.lua

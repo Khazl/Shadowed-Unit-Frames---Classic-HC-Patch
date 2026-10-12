@@ -1,39 +1,37 @@
-# Shadowed Unit Frames - Classic Reborn
+# SUF Classic Compatibility
 
-Community-maintained Classic compatibility fixes based on Shadowed Unit Frames v4.3.9-classic by Shadowed and contributors.
+A standalone compatibility addon for World of Warcraft Classic Era and Hardcore. Requires the original Shadowed Unit Frames addon, installed separately from its official distribution.
 
-Original project: https://github.com/Nevcairiel/ShadowedUnitFrames
+## What it fixes
 
-## Current fix
+Supplies the missing legacy DebuffTypeColor global used by SUF's aura borders, debuff health coloring, and debuff highlights. This addresses the nil-table error reported at auras.lua:562, including enemy Enrage buffs with no dispel type.
 
-Restores the legacy `DebuffTypeColor` table when the client does not provide it. This fixes the nil-table lookup at `modules/auras.lua:562`, including enemy Enrage buffs, and supplies the same colors to the health bar and debuff highlight modules. An existing color table is preserved.
+An existing table is left unchanged. The addon runs once when loaded, before SUF's login initialization. It has no polling, combat hooks, bundled libraries, or saved settings. It does not modify original addon files and does not address unrelated API errors.
 
-The compatibility block is in `ShadowedUnitFrames.lua`, before the affected modules load. This snapshot was taken from a Classic Era / Hardcore installation. File changes were verified; in-game validation is still pending. This is not a claim that every client compatibility issue is fixed.
+## Install
 
-## Installation
+1. Install the original Shadowed Unit Frames separately.
+2. Extract the release ZIP into World of Warcraft/_classic_era_/Interface/AddOns/.
+3. Confirm that SUF_ClassicCompatibility/SUF_ClassicCompatibility.toc exists directly under AddOns.
+4. Enable Shadowed Unit Frames and SUF Classic Compatibility, then restart the game.
+5. Use /sufcompat to check whether the fallback was applied.
 
-1. Download the named `ShadowedUnitFrames-Classic-Reborn-<version>.zip` asset from GitHub Releases (not Source code) and extract both addon folders into `World of Warcraft/_classic_era_/Interface/AddOns/`.
-2. Confirm that `ShadowedUnitFrames` and `ShadowedUF_Options` are sibling folders directly inside `AddOns`.
-3. For a source checkout instead, install the repository as `ShadowedUnitFrames` and copy `options/` beside it as `ShadowedUF_Options`.
-4. Enable both addons. Restart the game after installing, or use `/reload` when safely out of combat after updating an existing installation.
+For an independent in-game test, use an unmodified original SUF installation. If SUF already contains a color-table fix, /sufcompat will report that an existing table was preserved. Do not delete your WTF folder or SUF saved settings.
 
-The main `.toc` file must be directly inside `AddOns/ShadowedUnitFrames/`; the options `.toc` must be directly inside `AddOns/ShadowedUF_Options/`.
+Disable this companion addon and reload to stop applying its fallback. A future SUF/client update may make the companion unnecessary.
 
-Back up an existing installation before replacing it. Existing SUF profiles use the unchanged `ShadowedUFDB` saved variable. Addon managers may overwrite this compatibility fix when installing an upstream update.
+## Distribution
 
-## Repository contents
+The upload ZIP contains only the SUF_ClassicCompatibility folder with this addon's own files. No original SUF code, libraries, textures, fonts, or translations are included. Shadowed Unit Frames is a separate required dependency; this project is not affiliated with its authors.
 
-The main addon is at the repository root. `options/` contains the companion configuration addon, with its bundled libraries. Local backup files are excluded from version control.
+This companion's code is MIT licensed; that license does not apply to Shadowed Unit Frames. No CurseForge project ID is assigned in this package. When listing it on CurseForge, declare Shadowed Unit Frames as a required dependency and select Classic Era game versions. Platform approval remains subject to CurseForge review.
 
-Original author attribution and bundled library notices are retained. This repository does not relicense the original addon or its dependencies.
+Version 1.0.0. Target: the reported missing-color-table problem in SUF v4.3.9-classic. The user confirmed the standalone addon works in-game.
 
-## Publishing a release for CurseForge
+## GitHub releases
 
-1. On GitHub, create a release with a new tag targeting the latest commit on `main`, including the packaging workflow. Use a filename-safe tag such as `v4.3.9-reborn.1`.
-2. Click **Publish release**. The **Package addon** workflow builds and checks the ZIP, then attaches it to that release. Wait for the workflow to finish.
-3. Under release Assets, download `ShadowedUnitFrames-Classic-Reborn-<tag>.zip`. Do not upload GitHub's automatic **Source code (zip)** archive to CurseForge.
-4. Upload that named ZIP to your own CurseForge project and select the appropriate supported Classic game versions. No automatic CurseForge upload or API key is configured.
+This repository now distributes only the standalone companion. Earlier history and releases may contain the former full-addon version; those are not companion packages.
 
-The archive has exactly two top-level folders: `ShadowedUnitFrames/` and `ShadowedUF_Options/`. Both TOCs receive the release tag as their version. Bundled libraries are included; Git files, workflows, build scripts, backups, and build output are excluded. The main addon identifies CurseForge project **1739222**; the release packager preserves this ID. The original WoWInterface project ID remains excluded.
+Publish a release with a new tag targeting the latest main commit. The workflow attaches SUF_ClassicCompatibility-<tag>.zip after validation. Upload that named asset directly to CurseForge, not Source code (zip) or the Actions artifact wrapper. Its sole root folder is SUF_ClassicCompatibility.
 
-Publishing a release from an older commit without the workflow will not package it. Merely saving a draft does not trigger packaging. Pushes and manual Actions runs also build a preview ZIP without publishing a release. For local packaging, run `python scripts/package.py --version v4.3.9-reborn.1`; the ZIP is written to `dist/`.
+To build locally: python scripts/package.py --version 1.0.1
