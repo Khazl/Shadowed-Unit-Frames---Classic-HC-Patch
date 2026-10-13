@@ -24,7 +24,7 @@ Disable this companion addon and reload to stop applying its fallback. A future 
 
 The upload ZIP contains only the SUF_ClassicCompatibility folder with this addon's own files. No original SUF code, libraries, textures, fonts, or translations are included. Shadowed Unit Frames is a separate required dependency; this project is not affiliated with its authors.
 
-This companion's code is MIT licensed; that license does not apply to Shadowed Unit Frames. No CurseForge project ID is assigned in this package. When listing it on CurseForge, declare Shadowed Unit Frames as a required dependency and select Classic Era game versions. Platform approval remains subject to CurseForge review.
+This companion's code is MIT licensed; that license does not apply to Shadowed Unit Frames. This companion uses CurseForge project ID **1742980**. The release ZIP preserves this ID. When listing it on CurseForge, declare Shadowed Unit Frames as a required dependency and select Classic Era game versions. Platform approval remains subject to CurseForge review.
 
 Version 1.0.0. Target: the reported missing-color-table problem in SUF v4.3.9-classic. The user confirmed the standalone addon works in-game.
 
