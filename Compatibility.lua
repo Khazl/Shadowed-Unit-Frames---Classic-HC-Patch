@@ -30,5 +30,5 @@ SlashCmdList.SUFCLASSICCOMPATIBILITY = function()
     else
         message = "An aura color table already existed; it was left unchanged."
     end
-    print("SUF Classic Compatibility 1.0.0: " .. message)
+    print("Shadowed Unit Frames - Classic & HC Patch 1.0.0: " .. message)
 end

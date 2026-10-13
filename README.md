@@ -1,4 +1,4 @@
-# SUF Classic Compatibility
+# Shadowed Unit Frames - Classic & HC Patch
 
 A standalone compatibility addon for World of Warcraft Classic Era and Hardcore. Requires the original Shadowed Unit Frames addon, installed separately from its official distribution.
 
@@ -13,7 +13,7 @@ An existing table is left unchanged. The addon runs once when loaded, before SUF
 1. Install the original Shadowed Unit Frames separately.
 2. Extract the release ZIP into World of Warcraft/_classic_era_/Interface/AddOns/.
 3. Confirm that SUF_ClassicCompatibility/SUF_ClassicCompatibility.toc exists directly under AddOns.
-4. Enable Shadowed Unit Frames and SUF Classic Compatibility, then restart the game.
+4. Enable Shadowed Unit Frames and Shadowed Unit Frames - Classic & HC Patch, then restart the game.
 5. Use /sufcompat to check whether the fallback was applied.
 
 For an independent in-game test, use an unmodified original SUF installation. If SUF already contains a color-table fix, /sufcompat will report that an existing table was preserved. Do not delete your WTF folder or SUF saved settings.
